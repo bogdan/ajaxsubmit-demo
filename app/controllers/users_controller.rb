@@ -44,14 +44,10 @@ class UsersController < ApplicationController
   def create
     @user = User.new(params[:user])
 
-    respond_to do |format|
-      if @user.save
-        format.html { redirect_to(:users, :notice => 'Registration successfull. Check your email for activation instructions.') }
-        format.xml { render :xml => @user, :status => :created, :location => @user }
-      else
-        format.html { render :action => "new" }
-        format.xml { render :xml => @user.errors, :status => :unprocessable_entity }
-      end
+    if @user.save
+      render :json => {:redirect => root_path}
+    else
+      render :json => {:errors => @user.errors}
     end
   end
 

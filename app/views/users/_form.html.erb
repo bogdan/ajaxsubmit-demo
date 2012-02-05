@@ -1,25 +1,14 @@
-<%= form_for(@user) do |f| %>
-  <% if @user.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+<%= form_for(@user, :html => {:class => "ajax-form"}) do |f| %>
 
-      <ul>
-      <% @user.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
+  <div class="field" validate="email">
   	<%= f.label :email %><br />
     <%= f.text_field :email %>
   </div>
-  <div class="field">
+  <div class="field" validate="password">
     <%= f.label :password %><br />
     <%= f.password_field :password %>
   </div>
-  <div class="field">
+  <div class="field" validate="password_confirmation">
     <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation %>
   </div>
@@ -27,3 +16,4 @@
     <%= f.submit %>
   </div>
 <% end %>
+

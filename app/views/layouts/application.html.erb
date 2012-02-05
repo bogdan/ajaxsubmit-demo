@@ -3,7 +3,9 @@
 <head>
   <title>Collaboration</title>
   <%= stylesheet_link_tag :all %>
-  <%= javascript_include_tag :defaults %>
+  <%= javascript_include_tag "https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.js" %>
+  <%= javascript_include_tag "ajaxsubmit" %>
+  <%= javascript_include_tag "application" %>
   <%= csrf_meta_tag %>
 </head>
 <body>
@@ -15,9 +17,6 @@
         <% else %>
         	<%= link_to "Register", new_user_path %> |
         	<%= link_to "Login", :login %> |
-			<%= link_to 'Login from HTTP', login_from_http_basic_users_path %> |
-			<%= link_to 'Login with Twitter', auth_at_provider_path(:provider => :twitter) %> | 
-			<%= link_to 'Login with Facebook', auth_at_provider_path(:provider => :facebook) %>
         <% end %>
 	</div>
 	<% if current_user %>
