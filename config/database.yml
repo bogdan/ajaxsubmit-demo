@@ -21,8 +21,10 @@ test:
 
 production:
   adapter: postgresql
-  database: ajaxsubmit_production
-  username: postgres
+  database: glzretnzii
+  host: ec2-50-19-225-156.compute-1.amazonaws.com
+  username: glzretnzii
+  password: SknY8yZ-vvf3HJK_RIUc
   pool: 5
   timeout: 5000
 
