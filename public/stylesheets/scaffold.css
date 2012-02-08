@@ -58,3 +58,18 @@ div.field, div.actions {
   font-size: 12px;
   list-style: square;
 }
+
+.left {
+  float: left;
+}
+.right {
+  float: right;
+}
+
+.clear {
+  clear: both;
+}
+
+.spaced {
+  margin-right: 50px
+}

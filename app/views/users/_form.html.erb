@@ -1,19 +1,24 @@
-<%= form_for(@user, :html => {:class => "ajax-form"}) do |f| %>
+<div class="left spaced">
+  <%= form = form_for(@user, :html => {:class => "ajax-form"}) do |f| %>
+  
+    <div class="field" validate="email">
+      <%= f.label :email %><br />
+      <%= f.text_field :email, :size => nil %>
+    </div>
+    <div class="field" validate="password">
+      <%= f.label :password %><br />
+      <%= f.password_field :password, :size => nil%>
+    </div>
+    <div class="field" validate="password_confirmation">
+      <%= f.label :password_confirmation %><br />
+      <%= f.password_field :password_confirmation, :size => nil%>
+    </div>
+    <div class="actions">
+      <%= f.submit :id => nil %>
+    </div>
+  <% end %>
+</div>
 
-  <div class="field" validate="email">
-  	<%= f.label :email %><br />
-    <%= f.text_field :email %>
-  </div>
-  <div class="field" validate="password">
-    <%= f.label :password %><br />
-    <%= f.password_field :password %>
-  </div>
-  <div class="field" validate="password_confirmation">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+<%= render :partial => 'shared/source', :locals => {:form => form} %>
+
 
