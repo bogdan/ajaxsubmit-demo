@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Collaboration</title>
+  <title>Ajaxsubmit demo application</title>
   <%= stylesheet_link_tag :all %>
   <%= javascript_include_tag "https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.js" %>
   <%= javascript_include_tag "shjs" %>
@@ -14,19 +14,27 @@
 </head>
 <body>
 
+  <div style="float:left">
+    <a href="https://github.com/bogdan/ajaxsubmit"> Library source code</a>
+    <a href="https://github.com/bogdan/ajaxsubmit-demo"> Demo source code</a>
+  </div>
+  <div style="float:right">
+    <a href="http://gusiev.com">Author: Bogdan Gusiev</a>
+  </div>
+  <div style="clear:both"></div>
+  <hr/>
+  <br/>
 	<div id="nav">
-		<% if current_user %>
-        	<%= link_to "Edit Profile", edit_user_path(current_user.id) %>
-        	<%= link_to "Logout", :logout %>
-        <% else %>
-        	<%= link_to "Register", new_user_path %> |
-        	<%= link_to "Login", :login %> |
-        <% end %>
+    <%= link_to "Home", root_path %> |
+    <% if current_user %>
+      <%= link_to "Edit Profile", edit_user_path(current_user.id) %> |
+      <%= link_to "Logout", :logout %>
+    <% else %>
+      <%= link_to "Register", new_user_path %> |
+      <%= link_to "Login", :login %> |
+    <% end %>
 	</div>
-	<% if current_user %>
-		<div id="current_users"> Currently active users: <%= current_users_list %></div>
-	<% end %>
-<%= yield %>
+  <%= yield %>
 
 </body>
 </html>
