@@ -10,8 +10,8 @@ class User < ActiveRecord::Base
   accepts_nested_attributes_for :providers
 
   
-  validates_format_of :email, :with => /^[A-Z0-9_\.%\+\-']+@(?:[A-Z0-9\-]+\.)+(?:[A-Z]{2,4}|museum|travel)$/i 
-  validates_uniqueness_of :email
-  validates_length_of :password, :minimum => 3, :message => "password must be at least 3 characters long", :if => :password
-  validates_confirmation_of :password, :message => "should match confirmation", :if => :password
+  validates_format_of :email, :with => /^[A-Z0-9_\.%\+\-']+@(?:[A-Z0-9\-]+\.)+(?:[A-Z]{2,4}|museum|travel)$/i, :message => "Email is invalid"
+  validates_uniqueness_of :email, :message => "Email has already been taken"
+  validates_length_of :password, :minimum => 3, :message => "Password must be at least 3 characters long", :if => :password
+  validates_confirmation_of :password, :message => "Password should match confirmation", :if => :password
 end
