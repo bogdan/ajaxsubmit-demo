@@ -8,6 +8,7 @@
 [validate].error .validation {
   opacity: 1;
   visibility: visible;
+  border-radius: 6px
 }
 [validate].error:hover .validation {
   background: #f03333;

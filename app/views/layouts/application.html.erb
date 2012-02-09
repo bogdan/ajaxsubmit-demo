@@ -7,6 +7,7 @@
   <%= javascript_include_tag "shjs" %>
   <%= javascript_include_tag "sh_html" %>
   <%= javascript_include_tag "sh_javascript" %>
+  <%= javascript_include_tag "sh_css" %>
   <%= javascript_include_tag "ajaxsubmit" %>
   <%= javascript_include_tag "support" %>
   <%= javascript_include_tag "application" %>
@@ -14,25 +15,34 @@
 </head>
 <body>
 
-  <div style="float:left">
+  <h1>AjaxSubmit live demo application</h1>
+
+  <h3 class="left mrm">
     <a href="https://github.com/bogdan/ajaxsubmit"> Library source code</a>
+  </h3>
+  <h3 class="left">
     <a href="https://github.com/bogdan/ajaxsubmit-demo"> Demo source code</a>
-  </div>
-  <div style="float:right">
+  </h3>
+  <h3 class="right">
     <a href="http://gusiev.com">Author: Bogdan Gusiev</a>
-  </div>
-  <div style="clear:both"></div>
+  </h3>
+  <div class="clear"></div>
   <hr/>
   <br/>
+  <p>
+  Try to login or register with empty or invalid email to see the ajax validation.
+  </p>
 	<div id="nav">
-    <%= link_to "Home", root_path %> |
-    <% if current_user %>
-      <%= link_to "Edit Profile", edit_user_path(current_user.id) %> |
-      <%= link_to "Logout", :logout %>
-    <% else %>
-      <%= link_to "Register", new_user_path %> |
-      <%= link_to "Login", :login %> |
-    <% end %>
+    <h4>
+      <%= link_to "Home", root_path %> |
+      <% if current_user %>
+        <%= link_to "Edit Profile", edit_user_path(current_user.id) %> |
+        <%= link_to "Logout", :logout %>
+      <% else %>
+        <%= link_to "Register", new_user_path %> |
+        <%= link_to "Login", :login %> |
+      <% end %>
+    </h4>
 	</div>
   <%= yield %>
 

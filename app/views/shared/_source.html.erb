@@ -4,5 +4,10 @@
   <pre class="sh_html"><code><%= form.to_str.gsub(/<div style=.*<\/div>/, "") %></code></pre>
   <h3>JavaScript:</h3>
   <pre class="sh_javascript"><code><%= File.read(Rails.root.join("public/javascripts/application.js")) %></code></pre>
+  <h3>CSS:</h3>
+  <p>TODO: rework CSS without [validate] selector</p>
+  <pre class="sh_css"><code><%= File.read(Rails.root.join("public/stylesheets/ajaxsubmit.css")) %></code></pre>
+
+  
 </div>
 <div class="clear"></div>
