@@ -1,46 +1,7 @@
-[validate] {
+.error {
   position: relative;
 }
-[validate].error input {
-  background-color: #ffe3e3;
-  border-color: #e05c5c;
-}
-[validate].error .validation {
-  opacity: 1;
-  visibility: visible;
-  border-radius: 6px
-}
-[validate].error:hover .validation {
-  background: #f03333;
-  bottom: 29px;
-  display: block;
-  height: auto;
-  left: 0;
-  line-height: 16px;
-  max-height: 40px;
-  overflow: visible;
-  padding: 7px 10px;
-  position: absolute;
-  text-indent: 0;
-  width: 238px;
-  z-index: 10;
-}
-[validate].error:hover .validation .arrow {
-  background: url('/images/validation-error.png') 0 0 no-repeat;
-  bottom: -7px;
-  height: 7px;
-  position: absolute;
-  width: 7px;
-}
-[validate] input {
-  background: #fff;
-  border: 1px solid #ccc;
-  font-size: 12px;
-  padding: 6px 8px;
-  width: 240px;
-  border-radius: 2px;
-}
-[validate] .validation {
+.validation {
   background: url('/images/validation-error-notice.png') 0 0 no-repeat;
   bottom: 6px;
   color: #fff;
@@ -55,3 +16,34 @@
   width: 16px;
 }
 
+.error input {
+  background-color: #ffe3e3;
+  border-color: #e05c5c;
+}
+.error .validation {
+  opacity: 1;
+  visibility: visible;
+  border-radius: 6px
+}
+.error:hover .validation {
+  background: #f03333;
+  bottom: 29px;
+  display: block;
+  height: auto;
+  left: 0;
+  line-height: 16px;
+  max-height: 40px;
+  overflow: visible;
+  padding: 7px 10px;
+  position: absolute;
+  text-indent: 0;
+  width: 238px;
+  z-index: 10;
+}
+.error:hover .validation .arrow {
+  background: url('/images/validation-error.png') 0 0 no-repeat;
+  bottom: -7px;
+  height: 7px;
+  position: absolute;
+  width: 7px;
+}

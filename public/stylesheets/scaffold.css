@@ -73,3 +73,11 @@ div.field, div.actions {
 .spaced {
   margin-right: 50px
 }
+.field input {
+  background: #fff;
+  border: 1px solid #ccc;
+  font-size: 12px;
+  padding: 6px 8px;
+  width: 240px;
+  border-radius: 2px;
+}
