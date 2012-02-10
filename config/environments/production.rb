@@ -46,4 +46,13 @@ Collaboration::Application.configure do
 
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
+
+  ActionMailer::Base.delivery_method = :smtp
+  ActionMailer::Base.smtp_settings = {
+    :user_name => "ajaxsubmit",
+    :password => "b0d62783bf6d1980",
+    :address => "mailtrap.io",
+    :port => 2525,
+    :authentication => :plain,
+  }
 end
