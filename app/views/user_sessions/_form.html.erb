@@ -1,3 +1,6 @@
+<%= a = nil.tap do %>
+  <%= nil %>
+<% end -%>
 <div class="left spaced">
   <%= form = form_tag user_sessions_path, :method => :post, :class => "ajax-form" do %>
     <div class="field" validate="email base">
