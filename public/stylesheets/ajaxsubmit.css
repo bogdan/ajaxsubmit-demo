@@ -23,7 +23,7 @@
 .error .validation {
   opacity: 1;
   visibility: visible;
-  border-radius: 6px
+  border-radius: 6px;
 }
 .error:hover .validation {
   background: #f03333;
