@@ -2,25 +2,26 @@
 * Ajax Submit v0.0.1
 * http://github.com/bogdan/ajaxsubmit
 * 
-* Copyright 2011, Bogdan Gusiev
+* Copyright 2011-2012, Bogdan Gusiev
 * Released under the MIT License
 */
-
+(function() {
   (function($) {
     var applyValidation, applyValidationMessage;
-    if (!($().jquery >= '1.6')) throw 'ajaxsubmit.js require jQuery >= 1.6.0';
     $.errors = {
       attribute: "validate",
-      activationClass: "error",
-      messageClass: "validation-message",
-      format: "<div class='validation'><div class='validation-message'></div><div class='arrow'></div></div>"
+      activationClass: "validation-active",
+      format: "<div class='validation-block'><div class='validation-message'></div></div>",
+      messageClass: "validation-message"
     };
     applyValidationMessage = function(div, message) {
       var message_div;
       if (!div.hasClass($.errors.activationClass)) {
         div.addClass($.errors.activationClass);
         message_div = div.find("." + $.errors.messageClass);
-        if (message_div.size() === 0) div.append($.errors.format);
+        if (message_div.size() === 0) {
+          div.append($.errors.format);
+        }
         message_div = div.find("." + $.errors.messageClass);
         if (message_div.size() > 0) {
           return message_div.html(message);
@@ -39,37 +40,47 @@
       return applyValidationMessage(div, message);
     };
     $.fn.applyErrors = function(errors) {
-      var form;
+      var form, old_errors;
       form = $(this);
       $(this).clearErrors();
       if ($.type(errors) === "object") {
-        errors = $.map(errors, function(v, k) {
-          return [[k, v]];
+        old_errors = errors;
+        errors = [];
+        $.each(old_errors, function(k, v) {
+          return errors.push([k, v]);
         });
       }
       return $(errors).each(function(key, error) {
         var field, message;
         field = error[0];
         message = error[1];
-        if ($.isArray(message)) message = message[0];
+        if ($.isArray(message)) {
+          message = message[0];
+        }
         return applyValidation(form, field, message);
       });
     };
     return $.fn.clearErrors = function() {
       var validators;
       validators = $(this).find("[" + $.errors.attribute + "]");
+      validators.find("." + $.errors.messageClass).html("");
       return validators.removeClass($.errors.activationClass);
     };
   })(jQuery);
-
+}).call(this);
+(function() {
   (function($) {
     var ajaxFormErrorHandler, ajaxFormSuccessHandler;
     $.fn.ajaxSubmit = function(options) {
       var $form, callback, error_callback, method, url;
-      if (options == null) options = {};
+      if (options == null) {
+        options = {};
+      }
       $form = $(this);
       $form.clearErrors();
-      if (typeof options === "function") options.success = options;
+      if (typeof options === "function") {
+        options.success = options;
+      }
       if (options.redirect && !options.success) {
         options.success = function() {
           return window.location = options.redirect;
@@ -99,16 +110,21 @@
           return window.location = data.redirect;
         }
       } else {
-        if (typeof error_callback === "function") error_callback.call($form, data);
+        if (typeof error_callback === "function") {
+          error_callback.call($form, data);
+        }
         return $form.applyErrors(data.errors);
       }
     };
     ajaxFormErrorHandler = function($form) {};
     return $.fn.ajaxForm = function(options) {
-      if (options == null) options = {};
+      if (options == null) {
+        options = {};
+      }
       return $(this).bind("submit", function(event) {
         event.preventDefault();
         return $(this).ajaxSubmit(options);
       });
     };
   })(jQuery);
+}).call(this);

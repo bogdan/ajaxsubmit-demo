@@ -1,7 +1,7 @@
-.error {
+.validation-active {
   position: relative;
 }
-.validation {
+.validation-block {
   background: url('/images/validation-error-notice.png') 0 0 no-repeat;
   bottom: 6px;
   color: #fff;
@@ -16,16 +16,16 @@
   width: 16px;
 }
 
-.error input {
+.validation-active input {
   background-color: #ffe3e3;
   border-color: #e05c5c;
 }
-.error .validation {
+.validation-active .validation-block {
   opacity: 1;
   visibility: visible;
   border-radius: 6px;
 }
-.error:hover .validation {
+.validation-active:hover .validation-block {
   background: #f03333;
   bottom: 29px;
   display: block;
@@ -40,7 +40,7 @@
   width: 238px;
   z-index: 10;
 }
-.error:hover .validation .arrow {
+.validation-active:hover .validation-block .arrow {
   background: url('/images/validation-error.png') 0 0 no-repeat;
   bottom: -7px;
   height: 7px;
