@@ -1,0 +1,3 @@
+$(function () {
+  $('.ajax-form').ajaxForm();
+});

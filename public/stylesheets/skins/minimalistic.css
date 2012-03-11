@@ -1,0 +1,7 @@
+.validation-block {
+  display: none;
+}
+
+.validation-active .validation-block {
+  display: block;
+}

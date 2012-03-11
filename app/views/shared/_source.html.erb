@@ -1,11 +1,19 @@
 <div class="left">
+	<div id="nav">
+    <h4>
+      Choose errors display skin (affects JS and CSS):
+      <br/>
+      <%= link_to "Mailtrap", change_skin_path("mailtrap"), :class => ("active" if ajaxsubmit_skin == "mailtrap") %> |
+      <%= link_to "Minimalistic", change_skin_path("minimalistic"), :class => ("active" if ajaxsubmit_skin == "minimalistic") %>
+    </h4>
+	</div>
   <h2>Source:</h2>
   <h3>HTML:</h3>
   <pre class="sh_html"><code><%= form.to_str.gsub(/<div style=.*<\/div>/, "") %></code></pre>
   <h3>JavaScript:</h3>
-  <pre class="sh_javascript"><code><%= File.read(Rails.root.join("public/javascripts/application.js")) %></code></pre>
+  <pre class="sh_javascript"><code><%= File.read(Rails.root.join("public/javascripts/skins/#{ajaxsubmit_skin}.js")) %></code></pre>
   <h3>CSS:</h3>
-  <pre class="sh_css"><code><%= File.read(Rails.root.join("public/stylesheets/ajaxsubmit.css")) %></code></pre>
+  <pre class="sh_css"><code><%= File.read(Rails.root.join("public/stylesheets/skins/#{ajaxsubmit_skin}.css")) %></code></pre>
 
   
 </div>

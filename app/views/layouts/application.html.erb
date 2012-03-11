@@ -5,7 +5,7 @@
   <%= stylesheet_link_tag "sh_ide-eclipse" %>
   <%= stylesheet_link_tag "grid" %>
   <%= stylesheet_link_tag "scaffold" %>
-  <%= stylesheet_link_tag "ajaxsubmit" %>
+  <%= stylesheet_link_tag "skins/#{ajaxsubmit_skin}" %>
   <%= javascript_include_tag "https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.js" %>
   <%= javascript_include_tag "shjs" %>
   <%= javascript_include_tag "sh_html" %>
@@ -13,6 +13,7 @@
   <%= javascript_include_tag "sh_css" %>
   <%= javascript_include_tag "ajaxsubmit" %>
   <%= javascript_include_tag "support" %>
+  <%= javascript_include_tag "skins/#{ajaxsubmit_skin}" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tag %>
 </head>
@@ -32,6 +33,11 @@
   <div class="clear"></div>
   <hr/>
   <br/>
+  <% if flash[:notice] %>
+    <div id="notice">
+      <%= flash[:notice] %>
+    </div>
+  <% end %>
   <p>
   Try to login or register with empty or invalid email to see the ajax validation.
   </p>

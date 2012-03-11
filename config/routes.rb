@@ -10,6 +10,11 @@ Collaboration::Application.routes.draw do
     end
   end
   
+  resources :skins do
+    member do
+      get :change
+    end
+  end
   resources :user_sessions
   resources :password_resets
   
