@@ -5,3 +5,7 @@
 .validation-active .validation-block {
   display: block;
 }
+
+.validation-message {
+  color: red;
+}

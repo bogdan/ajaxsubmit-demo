@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120211094301) do
+ActiveRecord::Schema.define(:version => 20120314153132) do
 
   create_table "user_providers", :force => true do |t|
     t.integer  "user_id",    :null => false
@@ -41,6 +41,8 @@ ActiveRecord::Schema.define(:version => 20120211094301) do
     t.datetime "lock_expires_at"
     t.string   "type"
     t.string   "name"
+    t.text     "bio"
+    t.string   "category"
   end
 
   add_index "users", ["activation_code"], :name => "index_users_on_activation_code"

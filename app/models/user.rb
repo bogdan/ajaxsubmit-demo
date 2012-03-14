@@ -2,7 +2,7 @@ class User < ActiveRecord::Base
 
   authenticates_with_sorcery!
   self.sorcery_config.prevent_non_active_users_to_login = false
-  attr_accessible :name, :email, :password, :providers_attributes
+  attr_accessible :name, :email, :password, :providers_attributes, :bio, :category
   
   has_many :providers, :class_name => "UserProvider", :dependent => :destroy
 
@@ -14,6 +14,8 @@ class User < ActiveRecord::Base
   validates_uniqueness_of :email, :message => "Email has already been taken"
   validates_length_of :password, :minimum => 3, :message => "Password must be at least 3 characters long"
   validates_length_of :name, :minimum => 3, :message => "Name must be at least 3 characters long"
+  validates_presence_of :bio, :message => "Bio can't be blank"
+  validates_presence_of :category, :message => "Category can't be blank"
 
 
 end

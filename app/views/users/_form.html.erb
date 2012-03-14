@@ -13,6 +13,15 @@
       <%= f.label :password %><br />
       <%= f.password_field :password, :size => nil%>
     </div>
+    <div class="field" validate="category">
+      <%= f.label :category %><br />
+      <%= f.select :category, ["Hipster", "Geek"], {:include_blank => true}, :size => nil%>
+    </div>
+    <div class="field" validate="bio">
+      <%= f.label :bio, "Bio (custom message example)" %><br />
+      <%= f.text_area :bio, :size => nil%>
+      <div class="validation-message inline"></div>
+    </div>
     <div class="actions">
       <%= f.submit :id => nil %>
     </div>
