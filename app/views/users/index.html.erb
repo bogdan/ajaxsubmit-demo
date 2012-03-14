@@ -1,16 +1,28 @@
-<h1>Listing users</h1>
-<p id="notice"><%= notice %></p>
-<p id="alert"><%= alert %></p>
-<table>
+<h1>
+  <% if current_user %>
+    Listing users
+  <% else -%>
+    Register
+  <% end %>
+</h1>
 
-<% @users.each do |user| %>
-  <tr>
-    <td><%= user.email %></td>
-    <td><%= link_to 'Show', user %></td>
-    <td><%= link_to 'Edit', edit_user_path(user) %></td>
-  </tr>
+
+<br />
+
+<% if current_user %>
+  <table>
+
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.email %></td>
+        <td><%= link_to 'Show', user %></td>
+        <td><%= link_to 'Edit', edit_user_path(user) %></td>
+      </tr>
+    <% end %>
+  </table>
+<% else -%>
+  <%= render :partial => "users/form"  %>
 <% end %>
-</table>
 
 <br />
 
