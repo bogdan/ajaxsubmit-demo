@@ -1,10 +1,15 @@
 <div class="left spaced">
+
   <%= form = form_tag(user_sessions_path, :method => :post, :class => "ajax-form") do %>
-    <div class="field" validate="email base">
+
+    <div validate="base">
+      <div class="validation-message inline"></div>
+    </div>
+    <div class="field">
       <%= label_tag :email %><br />
       <%= text_field_tag :email %>
     </div>
-    <div class="field" validate="password">
+    <div class="field">
       <%= label_tag :password %><br />
       <%= password_field_tag :password %>
     </div>
