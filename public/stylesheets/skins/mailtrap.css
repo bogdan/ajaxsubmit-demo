@@ -3,7 +3,7 @@
 }
 .validation-block {
   background: url('/images/validation-error-notice.png') 0 0 no-repeat;
-  bottom: 6px;
+  bottom: 8px;
   color: #fff;
   font-size: 11px;
   height: 16px;
