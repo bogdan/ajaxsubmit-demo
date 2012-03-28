@@ -16,6 +16,10 @@
   width: 16px;
 }
 
+select + .validation-block {
+  background: none;
+}
+
 .validation-active input {
   background-color: #ffe3e3;
   border-color: #e05c5c;

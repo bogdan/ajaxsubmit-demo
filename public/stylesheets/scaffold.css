@@ -89,6 +89,7 @@ div.field, div.actions {
   padding: 6px 8px;
   width: 257px;
   border-radius: 2px;
+  height: 30px
 }
 
 .field textarea {
