@@ -17,7 +17,7 @@
   display: block;
 }
 
-.validation-active .message{
+.validation-active .error-message{
   position: absolute;
   right: -228px;
   top: 35px;
@@ -27,7 +27,7 @@
 }
 
 
-.validation-active .message .bg {
+.validation-active .error-message .bg {
   background: url('/images/yellow-corner.png') no-repeat left top;
   width: 13px;
   height: 25px;
