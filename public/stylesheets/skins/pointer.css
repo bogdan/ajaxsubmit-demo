@@ -13,14 +13,10 @@
   border-width: 1px;
 }
 
-.validation-active .error-message {
-  display: block;
-}
-
 .validation-active .error-message{
   position: absolute;
-  right: -228px;
-  top: 35px;
+  right: -240px;
+  top: 20px;
   width: 238px;
   z-index: 7;
   display: block;
@@ -65,9 +61,5 @@
 }
 .validation-active .close-notice:hover{
   background: url('/images/close-hover-alert.png') no-repeat;
-}
-
-.validation-active label{
-  display: block;
 }
 
