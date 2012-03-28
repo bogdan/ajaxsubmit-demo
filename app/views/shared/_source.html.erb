@@ -2,10 +2,9 @@
 	<div id="nav">
  Current Skin: 
     <h2>
-      <strong><%= ajaxsubmit_skin.capitalize %></strong>
+      <%= ajaxsubmit_skin.capitalize %> skin
     </h2>
       <h4>
-      Choose skin: 
         <%= link_to "Mailtrap", change_skin_path("mailtrap"), :class => ("active" if ajaxsubmit_skin == "mailtrap") %> |
         <%= link_to "Minimalistic", change_skin_path("minimalistic"), :class => ("active" if ajaxsubmit_skin == "minimalistic") %> |
         <%= link_to "Pointer", change_skin_path("pointer"), :class => ("active" if ajaxsubmit_skin == "pointer") %>
