@@ -2,22 +2,22 @@
   display: none;
 }
 
-.field_with_errors{
+.validation-active{
 /*  display: inline-block;*/
   overflow: visible;
   position: relative;
 }
 
-.field_with_errors input, .field_with_errors textarea, .field_with_errors select{
+.validation-active input, .validation-active textarea, .validation-active select{
   border-color: #ffcc00;
   border-width: 1px;
 }
 
-.field_with_errors .error-message {
+.validation-active .error-message {
   display: block;
 }
 
-.field_with_errors .message{
+.validation-active .message{
   position: absolute;
   right: -228px;
   top: 35px;
@@ -27,7 +27,7 @@
 }
 
 
-.field_with_errors .message .bg {
+.validation-active .message .bg {
   background: url('/images/yellow-corner.png') no-repeat left top;
   width: 13px;
   height: 25px;
@@ -36,7 +36,7 @@
 }
 
 
-.field_with_errors .text-message {
+.validation-active .text-message {
   background-color: #ffcc00;
   display: block;
   margin-left: 13px;
@@ -49,7 +49,7 @@
   box-shadow:1px 1px 1px #999999; 
 }
 
-.field_with_errors .close-notice{
+.validation-active .close-notice{
   float: right;
   width: 19px;
   height: 19px;
@@ -57,17 +57,17 @@
   right: 1px;
   top: 1px;
 }
-.field_with_errors .close-notice span{
+.validation-active .close-notice span{
   background: url('/images/close.png') center center no-repeat;
   display: block;
   width: 19px;
   height: 19px;
 }
-.field_with_errors .close-notice:hover{
+.validation-active .close-notice:hover{
   background: url('/images/close-hover-alert.png') no-repeat;
 }
 
-.field_with_errors label{
+.validation-active label{
   display: block;
 }
 
