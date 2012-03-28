@@ -1,0 +1,73 @@
+.error-message {
+  display: none;
+}
+
+.field_with_errors{
+/*  display: inline-block;*/
+  overflow: visible;
+  position: relative;
+}
+
+.field_with_errors input, .field_with_errors textarea, .field_with_errors select{
+  border-color: #ffcc00;
+  border-width: 1px;
+}
+
+.field_with_errors .error-message {
+  display: block;
+}
+
+.field_with_errors .message{
+  position: absolute;
+  right: -228px;
+  top: 35px;
+  width: 238px;
+  z-index: 7;
+  display: block;
+}
+
+
+.field_with_errors .message .bg {
+  background: url('/images/yellow-corner.png') no-repeat left top;
+  width: 13px;
+  height: 25px;
+  display: block;
+  float: left;
+}
+
+
+.field_with_errors .text-message {
+  background-color: #ffcc00;
+  display: block;
+  margin-left: 13px;
+  padding: 4px 25px 4px 12px;
+  position: relative;
+  text-align: left;
+  min-height: 17px;
+  -moz-box-shadow:1px 1px 1px #999999;
+  -webkit-box-shadow:1px 1px 1px #999999;
+  box-shadow:1px 1px 1px #999999; 
+}
+
+.field_with_errors .close-notice{
+  float: right;
+  width: 19px;
+  height: 19px;
+  position: absolute;
+  right: 1px;
+  top: 1px;
+}
+.field_with_errors .close-notice span{
+  background: url('/images/close.png') center center no-repeat;
+  display: block;
+  width: 19px;
+  height: 19px;
+}
+.field_with_errors .close-notice:hover{
+  background: url('/images/close-hover-alert.png') no-repeat;
+}
+
+.field_with_errors label{
+  display: block;
+}
+
