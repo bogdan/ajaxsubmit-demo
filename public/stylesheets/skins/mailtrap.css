@@ -16,19 +16,15 @@
   width: 16px;
 }
 
-select + .validation-block {
+select + .validation-block,textarea + .validation-block {
   background: none;
 }
 
-.validation-active input {
+.validation-active input, .validation-active select, .validation-active textarea {
   background-color: #ffe3e3;
   border-color: #e05c5c;
 }
 
-.validation-active select {
-  background-color: #ffe3e3;
-  border-color: #e05c5c;
-}
 .validation-active .validation-block {
   opacity: 1;
   visibility: visible;
@@ -36,7 +32,7 @@ select + .validation-block {
 }
 .validation-active:hover .validation-block {
   background: #f03333;
-  bottom: 29px;
+  top: -12px;
   display: block;
   height: auto;
   left: 0;
@@ -48,6 +44,7 @@ select + .validation-block {
   text-indent: 0;
   width: 238px;
   z-index: 10;
+  bottom: inherit;
 }
 .validation-active:hover .validation-block .arrow {
   background: url('/images/validation-error.png') 0 0 no-repeat;

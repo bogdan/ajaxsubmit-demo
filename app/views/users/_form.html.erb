@@ -18,9 +18,8 @@
       <%= f.select :category, ["Hipster", "Geek"], {:include_blank => true}, :size => nil%>
     </div>
     <div class="field" validate="bio">
-      <%= f.label :bio, "Bio (custom message example)" %><br />
+      <%= f.label :bio, "Bio" %><br />
       <%= f.text_area :bio, :size => nil%>
-      <div class="validation-message inline"></div>
     </div>
     <div class="actions">
       <%= f.submit :id => nil %>

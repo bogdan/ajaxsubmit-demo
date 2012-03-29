@@ -12,8 +12,8 @@ class User < ActiveRecord::Base
   
   validates_format_of :email, :with => /^[A-Z0-9_\.%\+\-']+@(?:[A-Z0-9\-]+\.)+(?:[A-Z]{2,4}|museum|travel)$/i, :message => "Email is invalid"
   validates_uniqueness_of :email, :message => "Email has already been taken"
-  validates_length_of :password, :minimum => 3, :message => "Password must be at least 3 characters long"
-  validates_length_of :name, :minimum => 3, :message => "Name must be at least 3 characters long"
+  validates_length_of :password, :minimum => 3, :message => "Password must be at least 3 characters"
+  validates_length_of :name, :minimum => 3, :message => "Name must be at least 3 characters"
   validates_presence_of :bio, :message => "Bio can't be blank"
   validates_presence_of :category, :message => "Category can't be blank"
 
