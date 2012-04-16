@@ -76,6 +76,14 @@ div.field, div.actions {
   width: 240px;
   border-radius: 2px;
 }
+.field input.checkbox {
+  background: #fff;
+  border: 1px solid #ccc;
+  font-size: 12px;
+  padding: 6px 8px;
+  width: 20px;
+  border-radius: 2px;
+}
 
 .field select {
   background: #fff;

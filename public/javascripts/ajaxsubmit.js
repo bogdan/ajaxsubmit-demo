@@ -1,5 +1,5 @@
 /**
-* Ajax Submit v0.0.1
+* Ajax Submit v0.1.1
 * http://github.com/bogdan/ajaxsubmit
 * 
 * Copyright 2011-2012, Bogdan Gusiev
@@ -34,7 +34,7 @@
       var div;
       div = form.find("[" + $.errors.attribute + "~='" + field + "']");
       if (div.size() === 0) {
-        div = $("<div " + $.errors.attribute + "='" + field + "'></div>");
+        div = $(("<div " + $.errors.attribute + "='" + field + "'>") + ("Unassigned error: Add validate=\"" + field + "\" attribute somewhere in a form.</div>"));
         form.prepend(div);
       }
       return applyValidationMessage(div, message);
@@ -72,7 +72,7 @@
   (function($) {
     var ajaxFormErrorHandler, ajaxFormSuccessHandler;
     $.fn.ajaxSubmit = function(options) {
-      var $form, callback, error_callback, method, url;
+      var $form, callback, data, error_callback, method, url;
       if (options == null) {
         options = {};
       }
@@ -88,12 +88,16 @@
       }
       callback = options.success;
       error_callback = options.error;
-      method = $form.attr("method") || "GET";
+      method = $form.attr("method") || "get";
       url = $form.attr("action");
+      data = $form.serialize();
+      if (!jQuery.isEmptyObject(options.data)) {
+        data = data + "&" + $.param(options.data);
+      }
       return $.ajax({
-        type: method.toUpperCase(),
-        url: url,
-        data: $form.serialize(),
+        type: options.type || method,
+        url: options.url || url,
+        data: data,
         success: function(data) {
           return ajaxFormSuccessHandler($form, data, callback, error_callback);
         },

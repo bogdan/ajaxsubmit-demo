@@ -1,8 +1,12 @@
 .validation-active {
   position: relative;
 }
+.validation-active.indicate-error {
+  background-color: #ffe3e3;
+  border: 1px solid #e05c5c;
+  border-radius: 3px;
+}
 .validation-block {
-  background: url('/images/validation-error-notice.png') 0 0 no-repeat;
   bottom: 8px;
   color: #fff;
   font-size: 11px;
@@ -45,6 +49,10 @@ select + .validation-block,textarea + .validation-block {
   width: 238px;
   z-index: 10;
   bottom: inherit;
+}
+.indicate-error.validation-active:hover .validation-block {
+  top: inherit;
+  bottom: 100%;
 }
 .validation-active:hover .validation-block .arrow {
   background: url('/images/validation-error.png') 0 0 no-repeat;

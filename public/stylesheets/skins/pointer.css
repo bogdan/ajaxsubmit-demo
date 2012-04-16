@@ -3,9 +3,13 @@
 }
 
 .validation-active{
-/*  display: inline-block;*/
   overflow: visible;
   position: relative;
+}
+
+.validation-active.indicate-error {
+  border: 1px solid #ffcc00;
+  border-radius: 3px;
 }
 
 .validation-active input, .validation-active textarea, .validation-active select{
@@ -22,6 +26,10 @@
   display: block;
 }
 
+.indicate-error.validation-active .error-message{
+  top: inherit;
+  bottom: 20%;
+}
 
 .validation-active .error-message .bg {
   background: url('/images/yellow-corner.png') no-repeat left top;

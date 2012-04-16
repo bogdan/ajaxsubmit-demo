@@ -21,6 +21,10 @@
       <%= f.label :bio, "Bio" %><br />
       <%= f.text_area :bio, :size => nil%>
     </div>
+    <div class="indicate-error" validate="tos">
+      <%= f.check_box :tos, :class => "checkbox" %>
+      <%= f.label :tos, "Accept Terms and Conditions"%>
+    </div>
     <div class="actions">
       <%= f.submit :id => nil %>
     </div>
