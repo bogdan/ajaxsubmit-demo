@@ -6,7 +6,7 @@
   border: 1px solid #e05c5c;
   border-radius: 3px;
 }
-.validation-block {
+.validation-popup {
   bottom: 8px;
   color: #fff;
   font-size: 11px;
@@ -20,7 +20,7 @@
   width: 16px;
 }
 
-select + .validation-block,textarea + .validation-block {
+select + .validation-popup,textarea + .validation-popup {
   background: none;
 }
 
@@ -29,12 +29,12 @@ select + .validation-block,textarea + .validation-block {
   border-color: #e05c5c;
 }
 
-.validation-active .validation-block {
+.validation-active .validation-popup {
   opacity: 1;
   visibility: visible;
   border-radius: 6px;
 }
-.validation-active:hover .validation-block {
+.validation-active:hover .validation-popup {
   background: #f03333;
   top: -12px;
   display: block;
@@ -50,11 +50,11 @@ select + .validation-block,textarea + .validation-block {
   z-index: 10;
   bottom: inherit;
 }
-.indicate-error.validation-active:hover .validation-block {
+.indicate-error.validation-active:hover .validation-popup {
   top: inherit;
   bottom: 100%;
 }
-.validation-active:hover .validation-block .arrow {
+.validation-active:hover .validation-popup .arrow {
   background: url('/images/validation-error.png') 0 0 no-repeat;
   bottom: -7px;
   height: 7px;

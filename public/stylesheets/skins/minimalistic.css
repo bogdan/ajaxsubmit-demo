@@ -1,11 +1,8 @@
-.validation-block {
+.validation-text {
   display: none;
 }
 
-.validation-active .validation-block {
+.validation-active .validation-text {
   display: block;
-}
-
-.validation-message {
   color: red;
 }
