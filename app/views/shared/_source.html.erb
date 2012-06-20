@@ -1,14 +1,15 @@
 <div class="left">
+<h3>Choose a skin you like</h3>
 	<div id="nav">
- Current Skin: 
-    <h2>
-      <%= ajaxsubmit_skin.capitalize %>
-    </h2>
       <h4>
         <%= link_to "Mailtrap", change_skin_path("mailtrap"), :class => ("active" if ajaxsubmit_skin == "mailtrap") %> |
         <%= link_to "Minimalistic", change_skin_path("minimalistic"), :class => ("active" if ajaxsubmit_skin == "minimalistic") %> |
         <%= link_to "Pointer", change_skin_path("pointer"), :class => ("active" if ajaxsubmit_skin == "pointer") %>
       </h4>
+    <h2>
+     Current Skin: 
+      <%= ajaxsubmit_skin.capitalize %>
+    </h2>
 	</div>
   <h3>HTML:</h3>
   <pre class="sh_html"><code><%= form.to_str.gsub(/<div style=.*<\/div>/, "") %></code></pre>
