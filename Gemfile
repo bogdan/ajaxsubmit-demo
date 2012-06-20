@@ -16,7 +16,7 @@ gem 'sorcery', '0.7.4'
 # put test-only gems in this group so their generators
 # and rake tasks are available in development mode:
 group :development, :test do
-  gem "test-unit", "~> 2.3.0"
-  gem "rspec", "~> 2.5.0"
-  gem 'rspec-rails', "~> 2.5.0"
+  gem "test-unit", "~> 2.3.0", require: false
+  gem "rspec", "~> 2.5.0", require: false
+  gem 'rspec-rails', "~> 2.5.0", require: false
 end
