@@ -42,7 +42,7 @@
     </div>
   <% end %>
   <p>
-  Try to login or register with empty or invalid email to see the ajax validation.
+  Try to subscribe or register with empty or invalid email to see the ajax validation.
   </p>
 	<div id="nav">
     <h4>
@@ -50,9 +50,8 @@
       <% if current_user %>
         <%= link_to "Edit Profile", edit_user_path(current_user.id) %> |
         <%= link_to "Logout", :logout %>
-      <% else %>
-        <%= link_to "Login", :login %> |
       <% end %>
+      <%= link_to "Subscribe", subscriptions_path %>
     </h4>
 	</div>
   <%= yield %>

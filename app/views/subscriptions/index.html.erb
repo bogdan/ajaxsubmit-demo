@@ -1,0 +1,36 @@
+<div class="left spaced">
+  <h3>Subscribe to newsletter:</h3>
+  <h5>
+    This form show how different error styles could be combined in one form
+  </h5>
+  <%= form = form_for(@subscription, :html => {:class => "ajax-form"}) do |f| %>
+    <div class="field" validate="first_name">
+      <%= f.label :first_name %><br />
+      <%= f.text_field :first_name, :size => nil%>
+    </div>
+    <div class="field" validate="last_name">
+      <%= f.label :last_name %><br />
+      <%= f.text_field :last_name, :size => nil%>
+      <div class="validation-custom green">
+        <span class="validation-message"></span>
+      </div>
+    </div>
+    <div class="field" validate="email">
+      <div class="left">
+        <%= f.label :email, "Email (can be fake)" %><br />
+        <%= f.text_field :email, :size => nil %>
+      </div>
+      <div class="validation-custom red">
+        <span class="validation-message"></span>
+      </div>
+    </div>
+    <div class="clear"></div>
+    <div class="actions">
+      <%= f.submit :id => nil %>
+    </div>
+  <% end %>
+</div>
+
+<div class="left">
+  <%= render :partial => "shared/form_source", :locals => {:form => form} %>
+</div>

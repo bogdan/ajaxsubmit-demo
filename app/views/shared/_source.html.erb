@@ -11,8 +11,7 @@
       <%= ajaxsubmit_skin.capitalize %>
     </h2>
 	</div>
-  <h3>HTML:</h3>
-  <pre class="sh_html"><code><%= form.to_str.gsub(/<div style=.*<\/div>/, "") %></code></pre>
+  <%= render :partial => 'shared/form_source', :locals => {:form => form} %>
   <h3>JavaScript:</h3>
   <pre class="sh_javascript"><code><%= File.read(Rails.root.join("public/javascripts/skins/#{ajaxsubmit_skin}.js")) %></code></pre>
   <h3>CSS:</h3>
