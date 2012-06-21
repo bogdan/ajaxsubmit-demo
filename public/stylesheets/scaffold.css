@@ -123,3 +123,8 @@ div.field, div.actions {
   background-color: #3F3;
   border: 1px solid green;
 }
+.validation-custom.blue {
+  width: 130px;
+  background-color: #33F;
+  border: 1px solid blue;
+}

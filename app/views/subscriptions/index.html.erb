@@ -6,7 +6,13 @@
   <%= form = form_for(@subscription, :html => {:class => "ajax-form"}) do |f| %>
     <div class="field" validate="first_name">
       <%= f.label :first_name %><br />
-      <%= f.text_field :first_name, :size => nil%>
+      <div style="width: 258px">
+        <%= f.text_field :first_name, :size => nil%>
+        <div class="validation-custom blue right">
+          <span class="validation-message"></span>
+        </div>
+        <div class="clear"></div>
+      </div>
     </div>
     <div class="field" validate="last_name">
       <%= f.label :last_name %><br />
