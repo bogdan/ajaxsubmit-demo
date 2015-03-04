@@ -20,3 +20,7 @@ group :development, :test do
   gem "rspec", "~> 2.5.0", require: false
   gem 'rspec-rails', "~> 2.5.0", require: false
 end
+
+group :production do
+  gem 'puma', require: false
+end
