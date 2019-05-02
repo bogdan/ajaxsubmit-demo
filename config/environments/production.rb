@@ -55,4 +55,5 @@ Collaboration::Application.configure do
     :port => 2525,
     :authentication => :plain,
   }
+  config.eager_load = true
 end

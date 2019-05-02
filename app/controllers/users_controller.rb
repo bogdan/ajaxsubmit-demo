@@ -41,7 +41,7 @@ class UsersController < ApplicationController
   # POST /users
   # POST /users.xml
   def create
-    @user = User.new(params[:user])
+    @user = User.new(user_params)
 
     if @user.save
       render :json => {:redirect => root_path}
@@ -54,7 +54,7 @@ class UsersController < ApplicationController
   # PUT /users/1.xml
   def update
     @user = User.find(params[:id])
-    if @user.update_attributes(params[:user])
+    if @user.update_attributes(user_params)
       flash[:notice] = "Profile updated"
       render :json => {:redirect => root_path}
     else
@@ -73,7 +73,7 @@ class UsersController < ApplicationController
       format.xml  { head :ok }
     end
   end
-  
+
   def activate
     if @user = User.load_from_activation_token(params[:id])
       @user.activate!
@@ -82,10 +82,14 @@ class UsersController < ApplicationController
       not_authenticated
     end
   end
-  
+
   # The before filter requires authentication using HTTP Basic,
   # And this action redirects and sets a success notice.
   def login_from_http_basic
     redirect_to users_path, :notice => 'Login from basic auth successful'
+  end
+
+  def user_params
+    params[:user].permit(:name, :email, :password, :providers_attributes, :bio, :category, :tos)
   end
 end
